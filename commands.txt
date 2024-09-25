@@ -1,0 +1,29 @@
+#01 - Create the NextJs Base
+https://nextjs.org/docs/getting-started/installation
+npx create-next-app@latest ./
+TS - Yes
+ESLint - No
+Tailwind - Yes
+src - No
+App Router - Yes
+import alias - No
+
+#02 - Install shadcn/ui
+https://ui.shadcn.com/docs/installation/next
+npx shadcn@latest init
+Default
+Select base color
+css variables - Yes
+
+#03 - Install button component from shadcn
+npx shadcn@latest add button
+
+#04 - Install Uploadthing
+https://uploadthing.com/
+npm install uploadthing @uploadthing/react
+
+#05 - Install Clerk
+https://clerk.com/
+npm install @clerk/nextjs
+
+

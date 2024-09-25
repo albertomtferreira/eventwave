@@ -1,0 +1,5 @@
+edit favicon.ico
+https://www.favicon.cc/
+
+edit svg
+https://boxy-svg.com/
