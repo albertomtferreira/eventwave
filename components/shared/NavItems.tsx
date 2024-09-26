@@ -18,6 +18,7 @@ const NavItems = () => {
           return (
             <li
               key={link.route}
+              // style is different to the route that is active
               className={`${isActive && 'text-primary-500'} flex-center p-medium-16 whitespace-nowrap`}
             >
               <Link href={link.route}>{link.label}</Link>

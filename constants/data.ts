@@ -3,7 +3,7 @@ export const labels = {
   app_title_signin_signup: "EventWave - Sign in/Sign up",
   app_description: "EventWave is a platform for event management and ticketing.",
   login: "Login",
-
+  rights: "2024 Event Wave. All rights reserved"
 }
 
 export const assets = {
