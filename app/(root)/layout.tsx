@@ -20,11 +20,11 @@ export default function RootLayout({
 }>) {
   return (
     <div className="flex h-screen flex-col">
+      <Header />
       <main className="flex-1">
-        <Header />
         {children}
-        <Footer />
       </main>
+      <Footer />
     </div>
   );
 }
