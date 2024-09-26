@@ -26,4 +26,11 @@ npm install uploadthing @uploadthing/react
 https://clerk.com/
 npm install @clerk/nextjs
 
+#06 - Install Sheet component from shadcn
+npx shadcn@latest add sheet
+
+#07 - Install Separator component from shadcn
+npx shadcn@latest add separator
+
+
 

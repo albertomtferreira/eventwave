@@ -9,5 +9,19 @@ export const labels = {
 export const assets = {
   favicon_main_layout: "/favicon.ico",
   favicon_root_layout: "/favicon.ico",
-  logo: "/assets/images/logo.svg",
+
+}
+
+export const logo = {
+  image: "/assets/images/logo.svg",
+  alt: "EventWave Logo",
+  height: 38,
+  width: 128
+}
+
+export const mobile_nav_icon = {
+  image: "/assets/icons/menu.svg",
+  alt: "Menu",
+  width: 24,
+  height: 24
 }

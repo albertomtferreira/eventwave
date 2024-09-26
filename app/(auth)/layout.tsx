@@ -1,4 +1,4 @@
-import { assets, labels } from "@/utils/data";
+import { assets, labels } from "@/constants/data";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {

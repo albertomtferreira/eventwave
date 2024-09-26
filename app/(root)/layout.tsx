@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "../globals.css";
 import Header from "@/components/shared/Header";
 import Footer from "@/components/shared/Footer";
-import { assets, labels } from "@/utils/data";
+import { assets, labels } from "@/constants/data";
 
 
 export const metadata: Metadata = {
