@@ -29,10 +29,6 @@ const Header = () => {
             <Button asChild className="rounded-full" size="lg">
               <Link href="/sign-in" >{`${labels.login}`}</Link>
             </Button>
-            {/* FIXME */}
-            {/* remove the <MobileNav />  and <NavItems /> when the app will be stable on the cache sign in! */}
-            <NavItems />
-            <MobileNav />
           </SignedOut>
         </div>
 
