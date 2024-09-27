@@ -44,5 +44,8 @@ export const landing = {
   hero2_search_placeholder: "Search for events",
   hero2_category_label: "Category",
   hero2_category_placeholder: "Select a category"
-
+}
+export const dataBase = {
+  dbName: 'eventwave',
+  MONGODB_URI_error: 'Please define a MongoDB connection! MONGODB_URI missing'
 }
