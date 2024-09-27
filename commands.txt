@@ -38,3 +38,9 @@ npm i mongoose
 #09 - Install MongoDB
 npm i mongodb
 
+#10 - Install svix
+npm install svix
+
+#11 - Install Query String
+npm i query-string
+
