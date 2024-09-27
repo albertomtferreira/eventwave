@@ -32,5 +32,9 @@ npx shadcn@latest add sheet
 #07 - Install Separator component from shadcn
 npx shadcn@latest add separator
 
+#08 - Install Mongoose
+npm i mongoose
 
+#09 - Install MongoDB
+npm i mongodb
 
