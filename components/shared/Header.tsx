@@ -13,13 +13,14 @@ const Header = () => {
         <Link href="/" className="w-36">
           <Image src={`${logo.image}`} alt={`${logo.alt}`} width={logo.width} height={logo.height} />
         </Link>
+
         <SignedIn>
           <nav className="md:flex-between hidden w-full max-w-xs ">
             <NavItems />
           </nav>
         </SignedIn>
-        <div className="flex w-32 justify-end gap-3">
 
+        <div className="flex w-32 justify-end gap-3">
           <SignedIn>
             <UserButton />
             <MobileNav />
@@ -31,9 +32,7 @@ const Header = () => {
             </Button>
           </SignedOut>
         </div>
-
       </div>
-
     </header>
   )
 }
