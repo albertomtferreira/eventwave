@@ -1,4 +1,3 @@
-// @ts-ignore
 import { DropdownProps } from '@/types'
 import React, { startTransition, useState } from 'react'
 import {
