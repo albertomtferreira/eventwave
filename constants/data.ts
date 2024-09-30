@@ -1,4 +1,4 @@
-import { title } from "process"
+
 
 export const labels = {
   app_title: "EventWave",
@@ -19,6 +19,34 @@ export const logo = {
   alt: "EventWave Logo",
   height: 38,
   width: 128
+}
+
+export const location_image = {
+  image: "/assets/icons/location-grey.svg",
+  alt: "Location",
+  height: 24,
+  width: 24
+}
+
+export const calendar_image = {
+  image: "/assets/icons/calendar.svg",
+  alt: "Calendar",
+  height: 24,
+  width: 24
+}
+
+export const price_image = {
+  image: "/assets/icons/dollar.svg",
+  alt: "Dollar",
+  height: 24,
+  width: 24
+}
+
+export const url_image = {
+  image: "/assets/icons/link.svg",
+  alt: "Link",
+  height: 24,
+  width: 24
 }
 
 export const mobile_nav_icon = {

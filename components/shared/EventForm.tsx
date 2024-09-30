@@ -1,6 +1,6 @@
 "use client"
 import { EventFormProps } from '@/types'
-import React from 'react'
+import React, { useState } from 'react'
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import * as z from "zod"
@@ -19,10 +19,13 @@ import { Input } from "@/components/ui/input"
 import { eventFormSchema } from '@/lib/validator'
 import { eventDefaultValues } from '@/constants'
 import Dropdown from './Dropdown'
+import { FileUploader } from './FileUploader'
+import Image from 'next/image'
+import { location_image } from '@/constants/data'
 
 
 const EventForm = ({ userId, type }: EventFormProps) => {
-
+  const [files, setFiles] = useState<File[]>([])
   const initialValues = eventDefaultValues
 
   const form = useForm<z.infer<typeof eventFormSchema>>({
@@ -84,9 +87,51 @@ const EventForm = ({ userId, type }: EventFormProps) => {
             )}
           />
         </div>
+        <div className='flex flex-col gap-5 md:flex-row'>
+          {/* Event File Uploader */}
+          <FormField
+            control={form.control}
+            name="imageUrl"
+            render={({ field }) => (
+              <FormItem className='w-full'>
+                <FormControl className='h-72'>
+                  <FileUploader
+                    onFieldChange={field.onChange}
+                    imageUrl={field.value}
+                    setFiles={setFiles}
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+        </div>
+        {/* Event Location */}
+        <div className='flex flex-col gap-5 md:flex-row'>
+          <FormField
+            control={form.control}
+            name="locality"
+            render={({ field }) => (
+              <FormItem className='w-full'>
+                <FormControl>
+                  <div className='flex-center h-[54px] w-full overflow-hidden rounded-full bg-gray-50 px-4 py-2'>
+                    <Image
+                      src={location_image.image}
+                      alt={location_image.alt}
+                      width={location_image.width}
+                      height={location_image.height}
+                    />
+                    <Input placeholder="Event location or Online" {...field} className='input-field' />
+                  </div>
 
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+        </div>
 
-        <Button type="submit">Submit</Button>
+        <Button className='button col-span-2 w-full' type="submit">Submit</Button>
       </form>
     </Form>
   )
