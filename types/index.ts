@@ -102,7 +102,7 @@ export type Event = {
 
 export type EventFormProps = {
   userId: string
-  type: "create" | "update"
+  type: "Create" | "Update"
 }
 
 // ====== CATEGORY PARAMS
