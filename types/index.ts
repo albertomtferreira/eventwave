@@ -1,3 +1,5 @@
+import { Dispatch, SetStateAction } from "react"
+
 // ====== USER PARAMS
 export type CreateUserParams = {
   clerkId: string
@@ -158,5 +160,10 @@ export type SearchParamProps = {
 export type DropdownProps = {
   value?: string
   onChangeHandler?: () => void
+}
 
+export type FileUploadProps = {
+  imageUrl: string
+  onFieldChange: (value: string) => void
+  setFiles: Dispatch<SetStateAction<File[]>>
 }
