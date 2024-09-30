@@ -20,6 +20,8 @@ export const config = {
 };
 
 
+// TODO
+// Update the clerk NextJS and make the Middleware below compatible
 // import { clerkMiddleware, createRouteMatcher } from '@clerk/nextjs/server'
 
 // const isPublicRoute = createRouteMatcher([
