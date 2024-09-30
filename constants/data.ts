@@ -1,3 +1,5 @@
+import { title } from "process"
+
 export const labels = {
   app_title: "EventWave",
   app_title_signin_signup: "EventWave - Sign in/Sign up",
@@ -25,6 +27,7 @@ export const mobile_nav_icon = {
   width: 24,
   height: 24
 }
+// Landing Page
 export const landing = {
   // Hero 1
   hero1_title: "Host, Connect, Celebrate: Your Events, Our Platform!",
@@ -48,4 +51,13 @@ export const landing = {
 export const dataBase = {
   dbName: 'eventwave',
   MONGODB_URI_error: 'Please define a MongoDB connection! MONGODB_URI missing'
+}
+
+// Create Event Page
+
+export const CreateEventData = {
+  title: "Create Event",
+}
+export const UpdateEventData = {
+  title: "Update Event",
 }
