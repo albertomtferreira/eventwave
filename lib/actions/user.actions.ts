@@ -8,14 +8,16 @@ import { revalidatePath } from "next/cache"
 import Order from "../database/models/order.model"
 import Event from '@/lib/database/models/event.model'
 
-export const createUser = async (user: CreateUserParams) => {
+export async function createUser(user: CreateUserParams) {
+  console.log("createUser on user.actions.ts", user)
   try {
     await connectToDatabase()
+
     const newUser = await User.create(user)
+    console.log(newUser)
     return JSON.parse(JSON.stringify(newUser))
   } catch (error) {
     handleError(error)
-
   }
 }
 
