@@ -98,6 +98,11 @@ export type Event = {
   }
 }
 
+export type EventFormProps = {
+  userId: string
+  type: "create" | "update"
+}
+
 // ====== CATEGORY PARAMS
 export type CreateCategoryParams = {
   categoryName: string
@@ -146,4 +151,12 @@ export type RemoveUrlQueryParams = {
 export type SearchParamProps = {
   params: { id: string }
   searchParams: { [key: string]: string | string[] | undefined }
+}
+
+// Shared Components
+
+export type DropdownProps = {
+  value?: string
+  onChangeHandler?: () => void
+
 }

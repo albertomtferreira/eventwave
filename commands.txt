@@ -15,7 +15,7 @@ Default
 Select base color
 css variables - Yes
 
-#03 - Install button component from shadcn
+#03 - Add button component from shadcn
 npx shadcn@latest add button
 
 #04 - Install Uploadthing
@@ -26,10 +26,10 @@ npm install uploadthing @uploadthing/react
 https://clerk.com/
 npm install @clerk/nextjs
 
-#06 - Install Sheet component from shadcn
+#06 - Add Sheet component from shadcn
 npx shadcn@latest add sheet
 
-#07 - Install Separator component from shadcn
+#07 - Add Separator component from shadcn
 npx shadcn@latest add separator
 
 #08 - Install Mongoose
@@ -43,4 +43,19 @@ npm install svix
 
 #11 - Install Query String
 npm i query-string
+
+#12 - Add Form component from shadcn
+npx shadcn@latest add form
+
+#13 - Add Input component from shadcn
+npx shadcn@latest add input
+
+#14 - Add Select component from shadcn
+npx shadcn@latest add select
+
+#15 - Add Alert Dialog component from shadcn
+npx shadcn@latest add alert-dialog
+
+#16 - Add Textarea Dialog component from shadcn
+npx shadcn@latest add textarea
 
