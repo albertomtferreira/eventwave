@@ -1,5 +1,5 @@
 import { DropdownProps } from '@/types'
-import React, { startTransition, useState } from 'react'
+import React, { startTransition, useEffect, useState } from 'react'
 import {
   Select,
   SelectContent,
@@ -21,15 +21,42 @@ import {
 
 import { ICategory } from '@/lib/database/models/category.model'
 import { Input } from '../ui/input'
+import { createCategory, deleteCategory, getAllCategories } from '@/lib/actions/category.actions'
+import { set } from 'mongoose'
+import { Checkbox } from '../ui/checkbox'
+import { Trash2 } from 'lucide-react'
 
 const Dropdown = ({ value, onChangeHandler }: DropdownProps) => {
-  const [categories, setCategories] = useState<ICategory>([
-    { _id: '1', name: 'Category 1' },
-    { _id: '2', name: 'Category 2' },])
+  const [categories, setCategories] = useState<ICategory[]>([])
 
   const [newCategory, setNewCategory] = useState('')
+  const [deletedCategory, setDeletedCategory] = useState('')
 
-  const handleAddCategory = () => { console.log("clicked") }
+  // create new category handler
+  const handleAddCategory = () => {
+    createCategory({
+      categoryName: newCategory.trim()
+    })
+      .then((category) => {
+        setCategories((prevState) => [...prevState, category])
+      })
+  }
+
+  const handleDeleteCategory = (categoryId: string) => {
+    deleteCategory(categoryId);
+    setDeletedCategory(categoryId)
+  };
+
+
+  // Get list of all categories
+  useEffect(() => {
+    const getCategories = async () => {
+      const categoryList = await getAllCategories()
+      categoryList && setCategories(categoryList as ICategory[])
+    }
+    getCategories()
+  }, [deletedCategory])
+
 
   return (
     <>
@@ -45,6 +72,7 @@ const Dropdown = ({ value, onChangeHandler }: DropdownProps) => {
               </SelectItem>
             ))
           }
+
           <AlertDialog>
             <AlertDialogTrigger className='p-medium-14 flex w-full rounded-sm py-3 pl-8 text-primary-500 hover:bg-primary-50 focus:text-primary-500'>
               Create New Category
@@ -64,6 +92,35 @@ const Dropdown = ({ value, onChangeHandler }: DropdownProps) => {
               <AlertDialogFooter>
                 <AlertDialogCancel>Cancel</AlertDialogCancel>
                 <AlertDialogAction onClick={() => startTransition(handleAddCategory)} >Add</AlertDialogAction>
+              </AlertDialogFooter>
+            </AlertDialogContent>
+          </AlertDialog>
+
+
+          <AlertDialog>
+            <AlertDialogTrigger className='p-medium-14 flex w-full rounded-sm py-3 pl-8 text-primary-500 hover:bg-primary-50 focus:text-primary-500'>
+              Manage Categories
+            </AlertDialogTrigger>
+            <AlertDialogContent className='bg-white'>
+              <AlertDialogHeader>
+                <AlertDialogTitle>Manage Categories</AlertDialogTitle>
+                {
+                  categories.length > 0 && categories.map((category) => (
+                    <AlertDialogDescription key={category._id} className='flex justify-start gap-5'>
+                      <Trash2
+                        className='text-red-500 hover:text-primary-50 hover:bg-red-700 active:text-red-800 cursor-pointer transition-colors duration-200 p-1 text-lg focus:outline-none focus:ring-2 focus:ring-red-500 rounded'
+                        onClick={() => {
+                          startTransition(() => handleDeleteCategory(category._id))
+                        }}
+                      />
+                      {category.name}
+                    </AlertDialogDescription>
+                  ))
+                }
+
+              </AlertDialogHeader>
+              <AlertDialogFooter>
+                <AlertDialogCancel className='button col-span-2 hover:bg-primary-500 hover:text-primary-50 '>Return</AlertDialogCancel>
               </AlertDialogFooter>
             </AlertDialogContent>
           </AlertDialog>
