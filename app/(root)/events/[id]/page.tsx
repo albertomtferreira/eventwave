@@ -10,6 +10,9 @@ const EventDetails = async ({ params: { id } }: SearchParamProps) => {
   console.log(event)
 
   return (
+    // TODO
+    // IMPLEMENT A DELETE AND UPDATE BUTTON LIKE THE ONES ON THE HOME PAGE -- COLLECTIONS -- CARD
+    // 
     <section className='flex justify-center bg-primary-50 bg-dotted-pattern bg-contain'>
       <div className='grid grid-cols-1 md:grid-cols-2 2xl:max-w-7xl'>
         <Image

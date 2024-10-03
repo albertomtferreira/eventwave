@@ -1,3 +1,4 @@
+import { IEvent } from "@/lib/database/models/event.model"
 import { Dispatch, SetStateAction } from "react"
 
 // ====== USER PARAMS
@@ -15,6 +16,17 @@ export type UpdateUserParams = {
   lastName: string
   username: string
   photo: string
+}
+
+export type CollectionProps = {
+  data: IEvent[],
+  emptyTitle: string,
+  emptyStateSubtext: string,
+  page: number | string,
+  totalPages?: number,
+  collectionType: "Events_Organized" | "My_Tickets" | "All_Events",
+  urlParamName?: string,
+  limit: number
 }
 
 // ====== EVENT PARAMS
@@ -51,6 +63,12 @@ export type UpdateEventParams = {
     url: string
   }
   path: string
+}
+
+export type UpdateEventProps = {
+  params: {
+    id: string
+  }
 }
 
 export type DeleteEventParams = {
@@ -103,6 +121,8 @@ export type Event = {
 export type EventFormProps = {
   userId: string
   type: "Create" | "Update"
+  event?: IEvent
+  eventId?: string
 }
 
 // ====== CATEGORY PARAMS
