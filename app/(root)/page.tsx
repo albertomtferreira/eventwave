@@ -1,9 +1,18 @@
+import Collection from "@/components/shared/Collection";
 import { Button } from "@/components/ui/button";
 import { landing } from "@/constants/data";
+import { getAllEvents } from "@/lib/actions/event.actions";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function Home() {
+export default async function Home() {
+  const events = await getAllEvents({
+    query: '',
+    category: '',
+    page: 1,
+    limit: 6,
+  });
+
   return (
     <>
       {/* Hero 1 - Landing Page */}
@@ -37,6 +46,15 @@ export default function Home() {
           {`${landing.hero2_category_label}`}
 
         </div>
+        <Collection
+          data={events?.data}
+          emptyTitle='No Events found'
+          emptyStateSubtext='Come Back Later'
+          collectionType='All_Events'
+          limit={6}
+          page={1}
+          totalPages={2}
+        />
 
       </section>
     </>
