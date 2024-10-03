@@ -59,5 +59,10 @@ npx shadcn@latest add alert-dialog
 #16 - Add Textarea Dialog component from shadcn
 npx shadcn@latest add textarea
 
+#17 - Install React Date Picker
+npm install react-datepicker --save
+
+#18 - Add Checkbox component from shadcn
+npx shadcn@latest add checkbox
 
 

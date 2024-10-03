@@ -5,8 +5,8 @@ import React from 'react'
 
 const CreateEvent = () => {
   const { sessionClaims } = auth()
-
-  const userId = sessionClaims?.user_id as string
+  const userId = sessionClaims?.userId as string
+  console.log(userId)
 
   return (
     <>
@@ -16,7 +16,7 @@ const CreateEvent = () => {
         </h3>
       </section>
       <div className='wrapper my-8'>
-        <EventForm userId={userId} type="create" />
+        <EventForm userId={userId} type="Create" />
       </div>
 
     </>
