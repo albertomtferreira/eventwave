@@ -9,7 +9,6 @@ import Order from "../database/models/order.model"
 import Event from '@/lib/database/models/event.model'
 
 export async function createUser(user: CreateUserParams) {
-  console.log("createUser on user.actions.ts", user)
   try {
     await connectToDatabase()
 

@@ -5,15 +5,7 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import * as z from "zod"
 import { Button } from "@/components/ui/button"
-import {
-  Form,
-  FormControl,
-  FormDescription,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form"
+import { Form, FormControl, FormField, FormItem, FormMessage } from "@/components/ui/form"
 import { Textarea } from "@/components/ui/textarea"
 import { Input } from "@/components/ui/input"
 import { Checkbox } from "@/components/ui/checkbox"
@@ -27,7 +19,6 @@ import DatePicker from "react-datepicker";
 import { useUploadThing } from '@/lib/uploadthing'
 import "react-datepicker/dist/react-datepicker.css";
 import { handleError } from '@/lib/utils'
-import { Router } from 'lucide-react'
 import { useRouter } from 'next/navigation'
 import { createEvent } from '@/lib/actions/event.actions'
 
