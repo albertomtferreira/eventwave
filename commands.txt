@@ -65,4 +65,8 @@ npm install react-datepicker --save
 #18 - Add Checkbox component from shadcn
 npx shadcn@latest add checkbox
 
+#19 - Install Stripe - Stripe-js
+npm install @stripe/stripe-js
 
+#20 - Install Stripe
+npm install stripe
