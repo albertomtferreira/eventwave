@@ -11,7 +11,7 @@ export interface IEvent extends Document {
   endDateTime: Date;
   category: { _id: string, name: string };
   organizer: { _id: string, firstName: string, lastName: string };
-  price: string;
+  price?: string;
   isFree: boolean;
   url: string;
 }
