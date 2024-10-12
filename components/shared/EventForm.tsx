@@ -25,6 +25,7 @@ import { createEvent, updateEvent } from '@/lib/actions/event.actions'
 
 const EventForm = ({ userId, type, event, eventId }: EventFormProps) => {
   const [files, setFiles] = useState<File[]>([])
+
   const initialValues = event && type === "Update"
     ? {
       ...event,
@@ -43,6 +44,7 @@ const EventForm = ({ userId, type, event, eventId }: EventFormProps) => {
 
   async function onSubmit(values: z.infer<typeof eventFormSchema>) {
 
+    // File Uploader
     let uploadedImageUrl = values.imageUrl
 
     if (files.length > 0) {
@@ -52,8 +54,12 @@ const EventForm = ({ userId, type, event, eventId }: EventFormProps) => {
       }
       uploadedImageUrl = uploadedImages[0].url
     }
+
+    // Create Event
     if (type === "Create") {
       try {
+        console.log({ values })
+        console.log("userId on EventForm ", userId)
         const newEvent = await createEvent({
           event: { ...values, imageUrl: uploadedImageUrl },
           userId,
@@ -67,6 +73,8 @@ const EventForm = ({ userId, type, event, eventId }: EventFormProps) => {
         handleError(error)
       }
     }
+
+    // Update Event
     if (type === "Update") {
       if (!eventId) {
         router.back()

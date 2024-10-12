@@ -2,6 +2,7 @@ import Collection from "@/components/shared/Collection";
 import { Button } from "@/components/ui/button";
 import { landing } from "@/constants/data";
 import { getAllEvents } from "@/lib/actions/event.actions";
+import { auth } from "@clerk/nextjs";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -12,6 +13,11 @@ export default async function Home() {
     page: 1,
     limit: 6,
   });
+
+  const userDetails = auth();
+  const userId = userDetails.userId as string;
+  // const userId = sessionClaims?.userId as string
+  console.log("UserId on Create Landing Page:", userId)
 
   return (
     <>

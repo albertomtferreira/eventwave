@@ -6,10 +6,11 @@ import { auth } from '@clerk/nextjs'
 import React from 'react'
 
 const UpdateEvent = async ({ params: { id } }: UpdateEventProps) => {
+  const { sessionClaims } = auth();
 
-  const { sessionClaims } = auth()
+  const userId = sessionClaims?.userId as string;
   const event = await getEventById(id)
-  const userId = sessionClaims?.userId as string
+
 
   return (
     <>
